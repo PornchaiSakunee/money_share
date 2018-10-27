@@ -24,8 +24,9 @@ class BabyShareRequest extends FormRequest
     public function rules()
     {
         $ree =  [
-            'bs_Fname'=>'required|array|between:2,6',
-            // 'bs_Lname'=>'required'
+            'bs_Fname'=>'required',
+            'bs_Lname'=>'required',
+            'bs_nickname'=>'required'
         ];
         return $ree ;
     }

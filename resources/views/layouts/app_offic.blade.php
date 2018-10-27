@@ -15,6 +15,7 @@
 	<link href="{{asset('css/colors.css')}}" rel="stylesheet" type="text/css">
 	<!-- /global stylesheets -->
 
+
 	<!-- Core JS files -->
 	<script type="text/javascript" src="{{asset('js/plugins/loaders/pace.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/core/libraries/jquery.min.js')}}"></script>
@@ -25,9 +26,9 @@
 	<!-- /core JS files -->
 
 	<!-- Theme JS files -->
-	{{-- <script type="text/javascript" src="{{asset('js/core/libraries/jquery_ui/core.min.js')}}"></script> --}}
 	
 
+	<script type="text/javascript" src="{{asset('js/core/libraries/jquery_ui/core.min.js')}}"></script>
 
 	<script type="text/javascript" src="{{asset('js/core/libraries/jasny_bootstrap.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/plugins/forms/validation/validate.min.js')}}"></script>
@@ -39,10 +40,24 @@
 	<script type="text/javascript" src="{{asset('js/plugins/forms/selects/bootstrap_multiselect.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/plugins/ui/moment/moment.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/plugins/pickers/daterangepicker.js')}}"></script>
-   
-	<script type="text/javascript" src="{{asset('js/plugins/tables/datatables/datatables.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('js/plugins/forms/wizards/form_wizard/form.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('js/plugins/forms/wizards/form_wizard/form_wizard.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/core/libraries/jquery_ui/interactions.min.js')}}"></script>
+
+
+	{{-- pickadate --}}
+	<script type="text/javascript" src="{{asset('js/plugins/pickers/anytime.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('js/plugins/pickers/pickadate/picker.js')}}"></script>
+	<script type="text/javascript" src="{{asset('js/plugins/pickers/pickadate/picker.date.js')}}"></script>
+	<script type="text/javascript" src="{{asset('js/plugins/pickers/pickadate/picker.time.js')}}"></script>
+	<script type="text/javascript" src="{{asset('js/plugins/pickers/pickadate/legacy.js')}}"></script>
+
+	<script type="text/javascript" src="{{asset('js/core/libraries/jquery_ui/widgets.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('js/plugins/tables/datatables/datatables.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('js/plugins/tables/datatables/extensions/natural_sort.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/plugins/forms/selects/select2.min.js')}}"></script>
+
+
 
 
 
@@ -51,13 +66,16 @@
 	
 	{{-- wizards --}}
  
-	@yield('script')
 
 	<script type="text/javascript" src="{{asset('js/core/app.js')}}"></script>
 	{{-- <script type="text/javascript" src="{{asset('js/pages/dashboard.js')}}"></script> --}}
    
 	<script type="text/javascript" src="{{asset('js/plugins/ui/ripple.min.js')}}"></script>
+	<script>
+		var APP_URL = '{{ url('/') }}'
+	</script>
 	<!-- /theme JS files -->
+	@yield('script')
 
 </head>
 
@@ -368,7 +386,7 @@
 			<ul class="nav navbar-nav navbar-nav-material">
 				<li class="active"><a href="{{route('home')}}"><i class="icon-display4 position-left"></i>{{@trans('content.analysis')}}</a></li>
 				<li><a href="{{route('baby_share')}}"><i class="icon-align-center-horizontal position-left"></i>{{@trans('content.baby_share')}}</a></li>
-				<li><a href="{{route('baby_share')}}"><i class="icon-align-center-horizontal position-left"></i>{{@trans('content.shared_circle')}}</a></li>
+				<li><a href="{{route('share_name')}}"><i class="icon-align-center-horizontal position-left"></i>{{@trans('content.shared_circle')}}</a></li>
 				<li><a href="{{route('baby_share')}}"><i class="icon-align-center-horizontal position-left"></i>{{@trans('content.daily_work')}}</a></li>
 				<li><a href="{{route('baby_share')}}"><i class="icon-align-center-horizontal position-left"></i>{{@trans('content.debtor')}}</a></li>
 				{{-- <li><a href="{{route('baby_share')}}"><i class="icon-align-center-horizontal position-left"></i>{{@trans('content.score')}}</a></li> --}}
